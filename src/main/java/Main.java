@@ -9,13 +9,18 @@ public class Main {
         int i = 0;
         while (encontrado == false) {
             int numI = Integer.parseInt(array[i]);
+
             for (int j = 0; j < array.length; j++) {
                 int numJ = Integer.parseInt(array[j]);
-                int suma = numI + numJ;
-                if (suma == 2020) {
-                    int mult = numI * numJ;
-                    System.out.println(numI + " + " + numJ + " = " + mult);
-                    encontrado = true;
+
+                for (int k = 0; k < array.length; k++) {
+                    int numK = Integer.parseInt(array[k]);
+                    int suma = numI + numJ + numK;
+                    if (suma == 2020 && encontrado == false) {
+                        int mult = numI * numJ * numK;
+                        System.out.println(numI + " * " + numJ + " * " + numK + " = " + mult);
+                        encontrado = true;
+                    }
                 }
             }
             i++;
